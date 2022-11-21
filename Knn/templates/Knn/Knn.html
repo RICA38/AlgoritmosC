@@ -64,12 +64,15 @@
     <h5>por favor introduzca los valores a evaluar con el algoritmo</h5>
     <h5> , </h5>
     
-    <form name="Valores" action="" method="get">
-      <input type="text" name="prod" id="Valores"> ,
-      <input type="text" name="prod" id="Valores"> ,
-      <input type="text" name="prod" id="Valores">
+    <form name="Valores" action="" method="post">
+      {% csrf_token %}
+
+      <input type="text" name="prod1" id="Valores1"> ,
+      <input type="text" name="prod2" id="Valores2"> ,
+      <input type="text" name="prod3" id="Valores3">
       
-      <button onclick="">Prueba</button>
+      <button type="submit">Prueba</button>
+    </form>
    
       <h1>Tabla de Datos</h1>
       <table class="table table-success table-striped table-bordered"  BORDER=10  >
@@ -86,13 +89,12 @@
           <tbody class="table-group-divider">
               
               
-              {% for dato in algoritmknn %}
+              {% for dato in datos %}
               <tr>
-                  {{algoritmknn}}
-                             
-                 
-                  
-                                  
+                <td>
+                  {{dato.c1}}  
+                </td>
+        
               </tr>
               {% endfor %}
               

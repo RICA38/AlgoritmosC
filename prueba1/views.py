@@ -33,4 +33,4 @@ def calculaSuma(l):
         
         lista.append(obj)
         
-    return lista
+    return lista[0:100]
